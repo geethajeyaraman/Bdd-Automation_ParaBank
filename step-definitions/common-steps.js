@@ -15,7 +15,7 @@ module.exports = function (){
         return page.common.elementExists(inputField);
   });
 
-  this.When("I enter the inputs for Login", function(dataTable){
+  this.When("I enter the inputs for login", function(dataTable){
          
     
 
@@ -23,10 +23,14 @@ module.exports = function (){
     for (var i=0;i < rows.length ; i++){
         var inputField = rows[i][0];
         var inputValue = rows[i][1];
-        return page.common.inputElements(inputField,inputValue);
+        page.common.inputElements(inputField,inputValue);
+
+        if(i == rows.length){
+            return page.common.inputElements(inputField,inputValue);
+        }
     }
 });
-this.When("I enter the inputs for Reset", function(dataTable){
+this.When("I enter the inputs for reset", function(dataTable){
          
     
 
@@ -34,19 +38,28 @@ this.When("I enter the inputs for Reset", function(dataTable){
     for (var i=0;i < rows.length ; i++){
         var inputField = rows[i][0];
         var inputValue = rows[i][1];
-        return page.common.inputElements(inputField,inputValue);
+        page.common.inputElements(inputField,inputValue);
+
+        if(i == rows.length){
+            return page.common.inputElements(inputField,inputValue);
+        }
     }
 });
 
-this.When("I enter the inputs for Registerbutton", function(dataTable){
+this.When("I enter the inputs for register", function(dataTable){
          
     
 
     const rows = dataTable.rows();
+    
     for (var i=0;i < rows.length ; i++){
         var inputField = rows[i][0];
         var inputValue = rows[i][1];
-        return page.common.inputElements(inputField,inputValue);
+        page.common.inputElements(inputField,inputValue);
+
+        if(i == rows.length){
+            return page.common.inputElements(inputField,inputValue);
+        }
     }
 });
 

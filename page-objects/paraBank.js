@@ -6,24 +6,24 @@ module.exports = {
 
     paraBankurl: 'https://parabank.parasoft.com/parabank/index.htm',
     elements : {
-        UserName :'//*[@id="loginPanel"]/form/div[1]/input',
-        Password :'//*[@id="loginPanel"]/form/div[2]/input'
+        userName :'//*[@id="loginPanel"]/form/div[1]/input',
+        password :'//*[@id="loginPanel"]/form/div[2]/input'
     },
 
 
    inputuserName: async function (Name) {
-    console.log("InputuserName :"+Name);
-    var selector = this.elements['UserName'];
-    console.log("Input UserName Selector :"+selector);
+    console.log("inputuserName :"+Name);
+    var selector = this.elements['userName'];
+    console.log("inputUserName Selector :"+selector);
         await driver.sleep(2000);
     return driver.findElement(By.xpath(selector)).sendKeys(Name);
 
 },
 
-    inputpassword: async function (pwd) {
-    console.log("InputPassword :"+pwd);
-    var selector = this.elements['Password'];
-    console.log("Input Password Selector :"+selector);
+    inputPassword: async function (pwd) {
+    console.log("inputPassword :"+pwd);
+    var selector = this.elements['password'];
+    console.log("inputPassword Selector :"+selector);
         await driver.sleep(2000);
     return driver.findElement(By.xpath(selector)).sendKeys(pwd);
 
